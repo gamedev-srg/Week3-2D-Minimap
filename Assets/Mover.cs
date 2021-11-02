@@ -5,6 +5,7 @@ using UnityEngine;
 public class Mover : MonoBehaviour
 {
     // Start is called before the first frame update
+    public float speed = 0.025f;
     void Start()
     {
         
@@ -16,25 +17,25 @@ public class Mover : MonoBehaviour
         if (Input.GetKey("left"))
         {
             Vector3 position = this.transform.position;
-            position.x-= 0.015f;
+            position.x-= speed;
             this.transform.position = position;
         }
         if (Input.GetKey("right"))
         {
             Vector3 position = this.transform.position;
-            position.x += 0.015f;
+            position.x += speed;
             this.transform.position = position;
         }
         if (Input.GetKey("up"))
         {
             Vector3 position = this.transform.position;
-            position.y += 0.015f;
+            position.y += speed;
             this.transform.position = position;
         }
         if (Input.GetKey("down"))
         {
             Vector3 position = this.transform.position;
-            position.y -= 0.015f;
+            position.y -= speed;
             this.transform.position = position;
         }
     }
