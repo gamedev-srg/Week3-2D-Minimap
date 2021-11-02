@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class Parralax : MonoBehaviour
 {
+    public GameObject cam;
+    private float length, startpos;
+    public float peffect;
     // Start is called before the first frame update
     void Start()
     {
-        
+        startpos = transform.position.x;
+        length = GetComponent<SpriteRenderer>().bounds.size.x;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        float dist = (cam.transform.position.x * peffect);
+        transform.position = new Vector3(startpos + dist, transform.position.y, transform.position.z);
     }
 }
